@@ -40,9 +40,19 @@ img {
 	display: grid;
 	grid-gap: 1px;
 	padding: 0px;
-	margin: 0 25%;
 	list-style: none;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.logo {
+	padding: 0.8rem;
+	display: block;
+	color: var(--primary);
+	background: var(--dark);
+	text-align: center;
+	font-size: 1.1rem;
+	box-shadow: 0 1px 2px rgba(104, 104, 104, 0.8);
+	text-transform: uppercase;
 }
 
 .main-nav a {
@@ -162,6 +172,10 @@ footer {
 /*Media Queries*/
 
 @media (max-width: 700px) {
+	.main-nav ul li:nth-of-type(3) {
+		order: -1;
+	}
+
 	.top-container {
 		grid-template-areas: 
 		'showcase showcase'
