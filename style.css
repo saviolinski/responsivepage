@@ -1,4 +1,9 @@
+/*video {
+	max-width: 100%;
+	position: absolute;
+	z-index: 0;
 
+}*/
 /*Vars*/
 :root {
 	--primary: #ddd;
@@ -81,11 +86,14 @@ img {
 }
 
 .showcase {
+	position: relative;
 	grid-area: showcase;
+	overflow: hidden;
 	min-height: 400px;
-	background: url("https://static.pexels.com/photos/373076/pexels-photo-373076.jpeg");
-	background-size: cover;
+/*	background: url("https://static.pexels.com/photos/373076/pexels-photo-373076.jpeg");*/
+	background: url("mounts.png");
 	background-position: center;
+	background-size: cover;
 	padding: 3rem;
 	display: flex;
 	flex-direction: column;
@@ -93,18 +101,41 @@ img {
 	justify-content: center;
 	box-shadow: var(--shadow);
 }
+.showcase::before {
+	content: "";
+	scale: ;
+    position: absolute;
+    width: 100%;
+    height: 105%;
+    z-index: -1;
+    background: url("stars.png") 0 0 repeat;
+    background-position: center;
+    background-size: cover;
+    animation: starsRotate 10s linear infinite;
+}
 
+@keyframes starsRotate {
+    0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(4deg) scale(1.11);}
+    90%  {transform: rotate(0deg) scale(1);}
+    100% {transform: rotate(0deg);}
+}
+.showcase-copy {
+	text-shadow: 2px 1px var(--dark);
+	position: relative;
+	z-index: 3;
+}
 .showcase h1 {
 	font-size: 3.5rem;
 	margin-bottom: 0;
-	color: var(--dark);
+	color: var(--primary);
 }
 
 .showcase p {
 	font-size: 1.3rem;
 	margin-top: 0;
 	padding: 1rem;
-	color: var(--dark);
+	color: var(--primary);
 }
 
 .top-box {
