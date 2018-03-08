@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
 	<title>Responsive site</title>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
@@ -15,11 +16,11 @@
 
 		<nav class="main-nav">
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li class="logo"><span style="font-family: 'Krona One', sans-serif;">parabole</span></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Contact</a></li>	
+				<li class='submenu'><a href="#">Home</a></li>
+				<li class='submenu'><a href="#">About</a></li>	
+				<li class="logo"><span style="font-family: 'Krona One', sans-serif;"><i class="fas fa-bars"></i>parabole</span></li>
+				<li class='submenu'><a href="#">Services</a></li>
+				<li class='submenu'><a href="#">Contact</a></li>	
 			</ul>
 		</nav>
 
@@ -28,7 +29,7 @@
 				<div class="showcase-copy">
 					<h1>Your Web Presence</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium minima asperiores libero corporis. Dolorum, sed!</p>
-					<a href="#" class="btn">Read More</a>
+					<a href="#" class="btn showcse">Read More</a>
 				</div>
 		</header>
 		<div class="top-box top-box-a">
@@ -78,11 +79,11 @@
 		<img src="https://source.unsplash.com/random/202x200" alt="randomimg">
 		<img src="https://source.unsplash.com/random/203x200" alt="randomimg">
 		<img src="https://source.unsplash.com/random/204x200" alt="randomimg">
-		<img src="https://source.unsplash.com/random/205x200" alt="randomimg">
-		<img src="https://source.unsplash.com/random/206x200" alt="randomimg">
-		<img src="https://source.unsplash.com/random/207x200" alt="randomimg">
-		<img src="https://source.unsplash.com/random/208x200" alt="randomimg">
-		<img src="https://source.unsplash.com/random/209x200" alt="randomimg">
+		<img src="https://source.unsplash.com/random/200x201" alt="randomimg">
+		<img src="https://source.unsplash.com/random/200x202" alt="randomimg">
+		<img src="https://source.unsplash.com/random/200x203" alt="randomimg">
+		<img src="https://source.unsplash.com/random/200x204" alt="randomimg">
+		<img src="https://source.unsplash.com/random/200x205" alt="randomimg">
 	</section>
 	<footer>
 		<p>Parabole &copy; 2018</p>
@@ -90,5 +91,34 @@
 
 <!-- wrapper ends -->
 </div>
+
+<script>
+	$(document).ready(function() {
+
+		var menuButton = $('.logo'),
+			submenus = $('.submenu'),
+			width = window.innerWidth,
+			isNavVisible = false;
+
+		
+			menuButton.on('click', function() {
+				if ( width < 500){
+					submenus.slideToggle(300);
+				}	
+			});      
+
+		$( window ).resize(function(){
+			width = window.innerWidth;
+			if (width > 500) {
+				submenus.slideDown();
+			} else { 
+				submenus.slideUp()
+			};
+		});  
+
+        
+	});
+	
+</script>	
 </body>
 </html>

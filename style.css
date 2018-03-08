@@ -30,6 +30,7 @@ body {
 	padding: 0.6rem 1.3rem;
 	text-decoration: none;
 	border: 0;
+	text-align: center;
 }
 
 img {
@@ -49,7 +50,13 @@ img {
 	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
 }
 
+ul li .svg-inline--fa{
+	display: none;
+
+}
+
 .logo {
+	position: relative;
 	padding: 0.8rem;
 	display: block;
 	color: var(--primary);
@@ -117,13 +124,13 @@ img {
 @keyframes starsRotate {
     0%   {transform: rotate(0deg);}
     50%  {transform: rotate(4deg) scale(1.11);}
-    90%  {transform: rotate(0deg) scale(1);}
-    100% {transform: rotate(0deg);}
+    100%  {transform: rotate(0deg) scale(1);}
 }
 .showcase-copy {
 	text-shadow: 2px 1px var(--dark);
 	position: relative;
-	z-index: 3;
+	z-index: 1;
+	padding: 1rem;
 }
 .showcase h1 {
 	font-size: 3.5rem;
@@ -134,8 +141,13 @@ img {
 .showcase p {
 	font-size: 1.3rem;
 	margin-top: 0;
-	padding: 1rem;
+	margin-bottom: 60px;
 	color: var(--primary);
+	padding: 1rem 0;
+}
+  .showcse  {
+  	margin-top: 20px;
+	padding: 0.8rem 2.8rem;
 }
 
 .top-box {
@@ -240,6 +252,30 @@ footer {
 		margin: 20px 20px 0px;
 		line-height: 1.4;
 	}
+	
+	.main-nav {
+		margin: -15px -20px;
+		position: fixed;
+		top: 0;
+  		width: 100%;
+  		z-index: 2;
+	}
+	
+	.showcase {
+		margin-top: 30px;
+	}
+
+	.submenu {
+		display: none;
+	}
+
+	ul li .svg-inline--fa{
+		display: block;
+		font-size: 1.8rem;
+		top: 20%;
+		left: 20px;
+		position: absolute;
+	}
 
 	.top-container {
 		grid-template-areas: 
@@ -251,6 +287,11 @@ footer {
 		margin-left: -20px;
 		margin-right: -20px;
 		text-align: center;
+	}
+
+	footer {
+		margin-left: -20px;
+		margin-right: -20px;
 	}
 }
 
@@ -264,10 +305,6 @@ footer {
 
 
 
-
-
-
-
-
+            
 
 
